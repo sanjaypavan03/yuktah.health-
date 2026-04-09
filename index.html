@@ -1274,7 +1274,7 @@ setTimeout(forceRevealVisible,100);
 var cntObs=new IntersectionObserver(function(entries){entries.forEach(function(x){if(!x.isIntersecting)return;x.target.querySelectorAll("[data-count]").forEach(function(el){var tgt=+el.dataset.count,suf=el.dataset.suf||"",st=null;function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/1800,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*tgt)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});cntObs.unobserve(x.target);});},{threshold:.2});
 document.querySelectorAll(".num-grid").forEach(function(el){cntObs.observe(el);});
 var selectedPlan='growth';
-var planCosts={starter:2500,growth:5000,pro:10000};
+var planCosts={starter:3500,growth:7000,pro:15000};
 var planNames={starter:'Starter',growth:'Growth',pro:'Pro'};
 function selectPlan(p){
   selectedPlan=p;
